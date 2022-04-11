@@ -126,6 +126,12 @@ namespace StarterAssets
 				_animator.SetTrigger("Throw");
 				_input.throwAction = false;
 			}
+
+			if (_input.leapAction)
+			{
+				_animator.SetTrigger("Leap");
+				_input.leapAction = false;
+			}
 		}
 
 		private void LateUpdate()
