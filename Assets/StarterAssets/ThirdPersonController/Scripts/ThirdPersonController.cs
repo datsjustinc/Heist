@@ -120,6 +120,12 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+
+			if (_input.throwAction)
+			{
+				_animator.SetTrigger("Throw");
+				_input.throwAction = false;
+			}
 		}
 
 		private void LateUpdate()
