@@ -90,6 +90,10 @@ namespace StarterAssets
 		private const float _threshold = 0.01f;
 
 		private bool _hasAnimator;
+		private bool isDiving = false;
+		private bool diveDelay = false;
+		private float delayTimer = 0;
+		private float delayMax = 1f;
 
 		private void Awake()
 		{
@@ -119,12 +123,26 @@ namespace StarterAssets
 			
 			JumpAndGravity();
 			GroundedCheck();
+			
+			if (diveDelay)
+			{
+				delayTimer += Time.deltaTime;
+
+				if (delayTimer >= delayMax)
+				{
+					isDiving = false;
+					diveDelay = false;
+					delayTimer = 0;
+				}
+			}
+
 			Move();
 
 			if (_input.throwAction)
 			{
 				_animator.SetTrigger("Throw");
 				_input.throwAction = false;
+				isDiving = true;
 			}
 
 			if (_input.leapAction)
@@ -228,6 +246,11 @@ namespace StarterAssets
 
 			Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
+			if (isDiving)
+			{
+				_speed = 0;
+			}
+
 			// move the player
 			_controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
@@ -325,6 +348,13 @@ namespace StarterAssets
 			
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		public void EndDive(float delayValue)
+		{
+			diveDelay = true;
+			delayMax = delayValue;
+			delayTimer = 0;
 		}
 	}
 }
