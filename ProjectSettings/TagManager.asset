@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Canvas
+  - Right
+  - Left
+  - Bank
+  - Test
   layers:
   - Default
   - TransparentFX
