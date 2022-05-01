@@ -61,8 +61,8 @@ public class Interactable : MonoBehaviour
 
             //bank = true;
 
-            NavMeshAgent agent = testAgentObject.GetComponent<NavMeshAgent>();
-            agent.destination =  testAgentObject2.transform.position;
+            //NavMeshAgent agent = testAgentObject.GetComponent<NavMeshAgent>();
+            //agent.destination =  testAgentObject2.transform.position;
         }
     }
 
