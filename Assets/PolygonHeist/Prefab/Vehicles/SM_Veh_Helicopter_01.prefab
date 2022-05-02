@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 475058}
   - component: {fileID: 3340784}
   - component: {fileID: 2353872}
+  - component: {fileID: 1364576603853576888}
   m_Layer: 0
   m_Name: SM_Veh_Helicopter_Blades_Back_01
   m_TagString: Untagged
@@ -283,6 +284,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &1364576603853576888
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124080}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47f4204d0270d834799a0eb59905dce5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &124366
 GameObject:
   m_ObjectHideFlags: 0
