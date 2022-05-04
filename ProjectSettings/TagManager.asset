@@ -10,6 +10,9 @@ TagManager:
   - Left
   - Bank
   - Test
+  - Outside
+  - Inside
+  - Vault
   layers:
   - Default
   - TransparentFX
