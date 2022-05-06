@@ -37,16 +37,34 @@ namespace PolyverseSkiesAsset
 
         Material skyboxMaterial;
 
+        public GameObject[] beams;
+
         void Start()
         {
             if (skyboxDay != null && skyboxNight != null)
             {
                 skyboxMaterial = new Material(skyboxDay);
             }
+
+            beams = GameObject.FindGameObjectsWithTag("Beam");
+            Debug.Log(beams.Length);
+
+            for (int i = 0; i < beams.Length; i++)
+                {
+                    beams[i].SetActive(false);
+                }
         }
 
         void Update()
         {
+            if (timeOfDay > 0.8f)
+            {
+                for (int i = 0; i < beams.Length; i++)
+                {
+                    beams[i].SetActive(true);
+                }
+            }
+
             if (sunDirection != null)
             {
                 Shader.SetGlobalVector("GlobalSunDirection", -sunDirection.transform.forward);

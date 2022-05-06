@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public ColorAdjustments color;
     public readonly float startSaturation = 75;
     public readonly float endSaturation = -75;
-
     public bool coroutineRun = false;
 
     void Start()
