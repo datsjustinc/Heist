@@ -36,8 +36,10 @@ namespace PolyverseSkiesAsset
         public bool styledSpace0;
 
         Material skyboxMaterial;
-
-        public GameObject[] beams;
+        public GameObject beam1;
+        public GameObject beam2;
+        public GameObject beam3;
+        public GameObject beam4;
 
         void Start()
         {
@@ -45,24 +47,24 @@ namespace PolyverseSkiesAsset
             {
                 skyboxMaterial = new Material(skyboxDay);
             }
-
-            beams = GameObject.FindGameObjectsWithTag("Beam");
-            Debug.Log(beams.Length);
-
-            for (int i = 0; i < beams.Length; i++)
-                {
-                    beams[i].SetActive(false);
-                }
         }
 
         void Update()
         {
             if (timeOfDay > 0.8f)
             {
-                for (int i = 0; i < beams.Length; i++)
-                {
-                    beams[i].SetActive(true);
-                }
+                beam1.SetActive(true);
+                beam2.SetActive(true);
+                beam3.SetActive(true);
+                beam4.SetActive(true);
+            }
+
+            else
+            {
+                beam1.SetActive(false);
+                beam2.SetActive(false);
+                beam3.SetActive(false);
+                beam4.SetActive(false);
             }
 
             if (sunDirection != null)
