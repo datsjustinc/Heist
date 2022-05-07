@@ -69,7 +69,7 @@ public class Interactable : MonoBehaviour
     void OnTriggerExit(Collider c)
     {
         iconObject.SetActive(false);
-
+        
         if (gameObject.tag == "Right")
         {
             transform.Rotate(0f, 90f, 0f, Space.Self);

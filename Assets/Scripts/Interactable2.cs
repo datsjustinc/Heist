@@ -13,6 +13,8 @@ public class Interactable2 : MonoBehaviour
     private RectTransform canvasRect;
     private RectTransform iconRect;
     private GameObject iconObject;
+    public GameObject vaultDoor;
+    public int open;
 
     //public bool bank;
 
@@ -30,6 +32,7 @@ public class Interactable2 : MonoBehaviour
         
         // Initial state is off until player enters the trigger
         iconObject.SetActive(false);
+        open = 0;
     }
 
     void Update()
@@ -39,16 +42,20 @@ public class Interactable2 : MonoBehaviour
         Vector2 proportionalPosition = new Vector2(ViewportPosition.x * canvasRect.sizeDelta.x, ViewportPosition.y * canvasRect.sizeDelta.y);
         
         iconRect.localPosition = proportionalPosition - (canvasRect.sizeDelta / 2);
+
+        if (open == 1 && Input.GetKey(KeyCode.E))
+        {
+            vaultDoor.transform.Rotate(0f, 135f, 0f, Space.Self);
+            open = 2;
+        }
     }
 
     void OnTriggerEnter(Collider c)
     {
-        if (c.gameObject.tag == "Player")
+        if (c.gameObject.tag == "Player" && open == 0)
         {
             iconObject.SetActive(true);
-
-            //bank = true;
-            Debug.Log("Moving Player Now...");
+            open = 1;
             //NavMeshAgent agent = testAgentObject.GetComponent<NavMeshAgent>();
             //agent.destination =  transform.position;
         }

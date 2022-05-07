@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     IEnumerator ChangeWorld()
     {
         coroutineRun = true;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         color.saturation.value -= 1;
         coroutineRun = false;
     }
