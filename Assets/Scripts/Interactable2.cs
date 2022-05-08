@@ -15,8 +15,7 @@ public class Interactable2 : MonoBehaviour
     private GameObject iconObject;
     public GameObject vaultDoor;
     public int open;
-
-    //public bool bank;
+    private AudioSource vaultOpen;
 
     void Start()
     {
@@ -33,6 +32,8 @@ public class Interactable2 : MonoBehaviour
         // Initial state is off until player enters the trigger
         iconObject.SetActive(false);
         open = 0;
+
+        vaultOpen = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +47,7 @@ public class Interactable2 : MonoBehaviour
         if (open == 1 && Input.GetKey(KeyCode.E))
         {
             vaultDoor.transform.Rotate(0f, 135f, 0f, Space.Self);
+            vaultOpen.Play();
             open = 2;
         }
     }

@@ -15,6 +15,8 @@ public class Interactable : MonoBehaviour
     private RectTransform canvasRect;
     private RectTransform iconRect;
     private GameObject iconObject;
+    private AudioSource stone;
+    private int count;
 
     //public bool bank;
 
@@ -32,6 +34,7 @@ public class Interactable : MonoBehaviour
         
         // Initial state is off until player enters the trigger
         iconObject.SetActive(false);
+        stone = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,6 +51,7 @@ public class Interactable : MonoBehaviour
         if (c.gameObject.tag == "Player")
         {
             iconObject.SetActive(true);
+            stone.Play();
 
             if (gameObject.tag == "Right")
             {
@@ -61,15 +65,16 @@ public class Interactable : MonoBehaviour
 
             //bank = true;
 
-            //NavMeshAgent agent = testAgentObject.GetComponent<NavMeshAgent>();
-            //agent.destination =  testAgentObject2.transform.position;
+            NavMeshAgent agent = testAgentObject.GetComponent<NavMeshAgent>();
+            agent.destination =  testAgentObject2.transform.position;
         }
     }
 
     void OnTriggerExit(Collider c)
     {
         iconObject.SetActive(false);
-        
+        stone.Play();
+
         if (gameObject.tag == "Right")
         {
             transform.Rotate(0f, 90f, 0f, Space.Self);
