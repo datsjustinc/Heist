@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 5edd62aabc7fb484b865b8ac39d02b33
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Heist
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0032842db4e86d2458063bb1d79ae0d3, type: 3}
+  - {fileID: 12800000, guid: f48051279f722224dbf18d194e549d62, type: 3}
+  - {fileID: 12800000, guid: 580d37aa16f1e134ab567a49577a899a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
