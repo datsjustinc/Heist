@@ -15,6 +15,8 @@ TagManager:
   - Vault
   - Beam
   - Obstacle
+  - Player2
+  - camera
   layers:
   - Default
   - TransparentFX
