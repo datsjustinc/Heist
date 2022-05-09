@@ -19,6 +19,5 @@ public class startMenu : MonoBehaviour
         startCamera.SetActive(false);
         mainCamera.SetActive(true);
         player.SetActive(true);
-
     }
 }

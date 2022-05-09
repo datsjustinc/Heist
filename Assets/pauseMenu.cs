@@ -30,11 +30,11 @@ public class pauseMenu : MonoBehaviour
             }
         }
     }
-    public void Restart()
+    public void Quit()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        SceneManager.LoadScene("Heist2");
+        Application.Quit();
     }
 
     public void Resume()
