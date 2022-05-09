@@ -6,7 +6,6 @@ using UnityEngine.Rendering.Universal;
 public class GameManager : MonoBehaviour
 {
     public GameObject outsideVolume;
-    public GameObject insideVolume;
     public Volume volume;
     public ColorAdjustments color;
     public readonly float startSaturation = 75;
@@ -21,17 +20,22 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (insideVolume.activeSelf && !coroutineRun && (color.saturation.value > endSaturation))
+        /*
+        if (!coroutineRun && (color.saturation.value > endSaturation))
         {
             StartCoroutine(ChangeWorld());
         }
+        */
+        color.saturation.value = -75;
     }
 
+    /*
     IEnumerator ChangeWorld()
     {
         coroutineRun = true;
-        yield return new WaitForSeconds(2);
-        color.saturation.value -= 1;
+        yield return new WaitForSeconds(1);
+        color.saturation.value -= -75;
         coroutineRun = false;
     }
+    */
 }

@@ -19,7 +19,6 @@ public class BeamDetection : MonoBehaviour
     {
         if (other.tag == "camera")
         {
-            Debug.Log("Hit");
             inside = true;
         }
     }

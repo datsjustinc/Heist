@@ -17,6 +17,10 @@ TagManager:
   - Obstacle
   - Player2
   - camera
+  - Wall
+  - Loot
+  - End
+  - Color
   layers:
   - Default
   - TransparentFX
