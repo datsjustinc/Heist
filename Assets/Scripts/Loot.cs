@@ -15,10 +15,12 @@ public class Loot : MonoBehaviour
     public GameObject player3;
     public GameObject camera2;
     public GameObject camera3;
+    private AudioSource money;
 
     void Start()
     {
         end.SetActive(false);
+        money = GetComponent<AudioSource>();
     }
     // Update is called once per frame
     void Update()
@@ -37,6 +39,7 @@ public class Loot : MonoBehaviour
     {
         if (other.CompareTag("Loot"))
         {
+            money.Play();
             Destroy(other.gameObject);
             count+=1;
         }
