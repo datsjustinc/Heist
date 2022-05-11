@@ -21,6 +21,7 @@ TagManager:
   - Loot
   - End
   - Color
+  - Player3
   layers:
   - Default
   - TransparentFX
